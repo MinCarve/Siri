@@ -9,13 +9,22 @@ time = datetime.datetime.now()
 gsearch = "search"
 ytsearch = "ytsearch"
 weather = "weather"
-i = random.randint(0, 3)
-options = [time, ytsearch, gsearch, weather]
+yelp = "yelp"
+i = random.randint(0, 4)
+options = [time, ytsearch, gsearch, weather, yelp]
 
 _options = options[i]
 
+if _options == yelp:
+    YelpURL = "https://www.yelp.com/search?find_desc="
+    
+    _yelp = input("What would you like to eat")
+    _yelp = '+'.join(_yelp.split())
+    webbrowser.open(YelpURL + _yelp)
+    
+
 if _options == weather:
-    _weather = input("Would you like to find out the weather in your local area?  [Y/N]")
+    _weather = input("Would you like to find out the weather in your local area?  [Y/N] \n")
     if _weather == "Y" or _weather == "y":
         webbrowser.open("https://duckduckgo.com/?q=weather&t=raspberrypi&ia=weather")
     elif _weather == "N" or _weather == "n":
@@ -36,7 +45,7 @@ elif _options == ytsearch:
 if youtubeSearch == True:
     yturl = "https://youtube.com/results?search_query="
 
-    ytsearch = input("What video do you want to watch?")
+    ytsearch = input("What video do you want to watch? \n")
     ytsearch = '+'.join(ytsearch.split())
     
     webbrowser.open(yturl + ytsearch)
