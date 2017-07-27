@@ -10,10 +10,18 @@ gsearch = "search"
 ytsearch = "ytsearch"
 weather = "weather"
 yelp = "yelp"
-i = random.randint(0, 4)
-options = [time, ytsearch, gsearch, weather, yelp]
+reddit = "reddit"
+i = random.randint(0, 5)
+options = [time, ytsearch, gsearch, weather, yelp, reddit]
 
 _options = options[i]
+
+if _options == reddit:
+    redditURL = "https://www.reddit.com/search?q="
+
+    _reddit = input("What would you like to browse for on Reddit?")
+    _reddit = '+'.join(_reddit.split())
+    webbrowser.open(redditURL + _reddit)
 
 if _options == yelp:
     YelpURL = "https://www.yelp.com/search?find_desc="
