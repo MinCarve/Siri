@@ -1,10 +1,26 @@
 import webbrowser
 import random
+import datetime
 
-browserurl = "https://google.com/#q="
+browserSearch = False
+time = datetime.datetime.now()
+search = "search"
+i = random.randint(0, 1)
+options = [time, search]
 
-search = input("Enter a keyword to search \n")
+_options = options[i]
 
-search = '+'.join(search.split())
+if _options == time:
+    browserSearch = False
+    print(time)
 
-webbrowser.open(browserurl + search)
+elif _options == search:
+    browserSearch = True
+
+if browserSearch == True:
+    browserurl = "https://google.com/#q="
+
+    search = input("Enter a keyword to search \n")
+    search = '+'.join(search.split())
+
+    webbrowser.open(browserurl + search)
