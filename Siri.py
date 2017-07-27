@@ -19,14 +19,14 @@ _options = options[i]
 if _options == reddit:
     redditURL = "https://www.reddit.com/search?q="
 
-    _reddit = input("What would you like to browse for on Reddit?")
+    _reddit = input("What would you like to browse for on Reddit? \n")
     _reddit = '+'.join(_reddit.split())
     webbrowser.open(redditURL + _reddit)
 
 if _options == yelp:
     YelpURL = "https://www.yelp.com/search?find_desc="
     
-    _yelp = input("What would you like to eat")
+    _yelp = input("What would you like to eat? \n")
     _yelp = '+'.join(_yelp.split())
     webbrowser.open(YelpURL + _yelp)
     
